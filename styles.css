@@ -1,0 +1,157 @@
+/* ===================================================
+   Basic CSS Styling for Investor Match Website
+   Author: Marco Mosquera
+   Date: 2025-10-23
+=================================================== */
+
+/* ---------------- Basic selectors ---------------- */
+
+/* Style all h1 elements (main headings) */
+h1 {
+    font-family: 'Arial', sans-serif;  /* Font type */
+    font-size: 2.5rem;                 /* Font size */
+    color: #2c3e50;                    /* Dark blue color */
+    text-align: center;                /* Center text */
+    margin-bottom: 10px;               /* Space below heading */
+}
+
+/* Style all paragraph elements */
+p {
+    font-family: 'Verdana', sans-serif; /* Font type */
+    font-size: 1rem;                     /* Font size */
+    color: #34495e;                      /* Grayish text color */
+    line-height: 1.6;                    /* Space between lines */
+    margin-bottom: 15px;                 /* Space below paragraph */
+}
+
+/* Style all div elements (containers) */
+div {
+    padding: 20px;             /* Inner spacing */
+    margin: 15px auto;         /* Outer spacing and center horizontally */
+    max-width: 900px;          /* Limit width for readability */
+}
+
+/* Style all links */
+a {
+    font-family: 'Tahoma', sans-serif;  /* Font type */
+    font-size: 1rem;                     /* Font size */
+    color: #2980b9;                      /* Blue link color */
+    text-decoration: none;               /* Remove underline */
+}
+
+/* Hover effect for all links */
+a:hover {
+    color: #e74c3c;                      /* Red on hover */
+}
+
+/* ---------------- Advanced selectors ---------------- */
+
+/* ID selectors for specific sections */
+#about {
+    background-color: #ecf0f1;           /* Light gray background */
+    border-left: 5px solid #2980b9;      /* Colored left border */
+}
+
+#services {
+    background-color: #fdf6e3;           /* Light beige background */
+    border-left: 5px solid #27ae60;      /* Green left border */
+}
+
+#join {
+    background-color: #f0f3f5;           /* Light blue-gray background */
+    border-left: 5px solid #f39c12;      /* Orange left border */
+    text-align: center;                  /* Center text in join section */
+}
+
+/* Class selector for call-to-action button */
+.join-button {
+    display: inline-block;               /* Treat like a button */
+    padding: 10px 25px;                  /* Button padding */
+    background-color: #2980b9;           /* Blue background */
+    color: white;                         /* White text */
+    font-weight: bold;                     /* Bold text */
+    border-radius: 5px;                    /* Rounded corners */
+    margin-top: 10px;                      /* Space above button */
+}
+
+/* Hover effect for join button */
+.join-button:hover {
+    background-color: #3498db;           /* Lighter blue on hover */
+}
+
+/* Descendant selector for small text inside footer */
+footer p small {
+    display: block;                      /* Force new line */
+    font-size: 0.8rem;                   /* Smaller font */
+    color: #7f8c8d;                      /* Gray color */
+    text-align: center;                   /* Center text */
+}
+
+/* Group selector for header text */
+header h1, header p {
+    text-align: center;                   /* Center all header text */
+    margin: 0;                            /* Remove default margin */
+}
+
+/* Attribute selector for images with alt attribute */
+img[alt] {
+    display: block;                        /* Block for centering */
+    margin: 20px auto;                     /* Center image */
+    border-radius: 10px;                   /* Rounded corners */
+}
+
+/* ---------------- Navigation Bar ---------------- */
+
+/* Style the navigation container */
+nav {
+    text-align: center;                    /* Center nav links */
+    margin: 20px 0;                        /* Space above and below nav */
+}
+
+/* Style nav links as clickable boxes */
+nav a {
+    display: inline-block;                 /* Treat like buttons */
+    padding: 10px 20px;                    /* Button padding */
+    margin: 5px;                           /* Space between links */
+    background-color: #2980b9;             /* Blue background */
+    color: white;                           /* White text */
+    text-decoration: none;                 /* Remove underline */
+    border-radius: 5px;                     /* Rounded corners */
+    font-weight: bold;                      /* Bold text */
+    transition: background-color 0.3s;     /* Smooth hover effect */
+}
+
+/* Hover effect for nav links */
+nav a:hover {
+    background-color: #3498db;            /* Lighter blue on hover */
+}
+
+/* ---------------- Footer ---------------- */
+
+/* Center all footer paragraphs */
+footer p {
+    text-align: center;                    /* Center text */
+    margin: 5px 0;                         /* Space above/below paragraphs */
+}
+
+/* Smaller, centered text for footer small element */
+footer p small {
+    display: block;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #7f8c8d;
+}
+
+/* ---------------- Header Image Banner ---------------- */
+
+/* Style the main header image */
+header img {
+    width: 100%;                            /* Full width of container */
+    max-width: 950px;                       /* Limit maximum width */
+    height: 150px;                          /* Fixed height for banner look */
+    display: block;                         /* Block for centering */
+    margin: 20px auto;                      /* Space above/below & center */
+    border-radius: 10px;                     /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);  /* Subtle shadow for depth */
+}
+
