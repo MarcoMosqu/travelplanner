@@ -183,8 +183,8 @@ nav a:hover {
 
 /* ---------------- Hero Section (Full Screen Banner) ---------------- */
 .hero {
-  height: 300vh;
-  width: 300%;
+  height: 100vh;
+  width: 100%;
   background-image: url('hunting2.jpg');
   background-size: cover;
   background-position: center;
@@ -213,6 +213,10 @@ img[alt] {
     margin: 20px auto;
     border-radius: 10px;
 }
+
+/* ---------------- Remove old header image style ---------------- */
+/* header img { ... } removed because hero background handles the image */
+
 
 
 
