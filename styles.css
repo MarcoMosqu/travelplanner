@@ -278,6 +278,17 @@ img[alt] {
 .right-text {
   animation: slideInRight 1.2s ease-out forwards;
 }
+/* ----------------Container for consistent width ---------------- */
+.container {
+  max-width: 1200px;   /* limit the width on big screens */
+  margin: 0 auto;      /* centers the container horizontally */
+  padding: 0 20px;     /* small padding on sides for phones */
+}
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1300px;
+  }
+}
 
 
 /* ---------------- Remove old header image style ---------------- */
