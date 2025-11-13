@@ -271,7 +271,8 @@ img[alt] {
 }
 
 .left-text {
-  animation: slideInLeft 1.2s ease-out forwards;
+  animation: slideInLeft 1.2s ease-out infinite alternate;
+  animation-delay: 1s;
 }
 
 .right-text {
