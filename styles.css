@@ -110,8 +110,11 @@ a:hover {
 
 /* ---------------- Section IDs ---------------- */
 #about {
-    background-color: #ecf0f1;
-    border-left: 5px solid #2980b9;
+  background: linear-gradient(145deg, #ffffff, #dcdcdc);
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px #b8b8b8, -5px -5px 15px #ffffff;
+
+
 }
 
 #services {
