@@ -248,6 +248,36 @@ img[alt] {
     margin: 20px auto;
     border-radius: 10px;
 }
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.left-text {
+  animation: slideInLeft 1.2s ease-out forwards;
+}
+
+.right-text {
+  animation: slideInRight 1.2s ease-out forwards;
+}
+
 
 /* ---------------- Remove old header image style ---------------- */
 /* header img { ... } removed because hero background handles the image */
