@@ -1,291 +1,102 @@
 /* ===================================================
-   Basic CSS Styling for Investor Match Website
-   Author: Marco Mosquera
-   Date: 2025-10-23
+   Merged Modern CSS for Investor Match Website
+   Author: Marco Mosquera (merged)
+   Date: 2025-11-13
 =================================================== */
-
-/* ---------------- Basic selectors ---------------- */
-
-/* Style all h1 elements (main headings) */
-h1 {
-    font-family: 'Arial', sans-serif;  /* Font type */
-    font-size: 2.5rem;                 /* Font size */
-    color: #2c3e50;                    /* Dark blue color */
-    text-align: center;                /* Center text */
-    margin-bottom: 10px;               /* Space below heading */
+/* GLOBAL RESET */
+* {
+  box-sizing: border-box;
 }
 
-/* Style all paragraph elements */
-p {
-    font-family: 'Verdana', sans-serif; /* Font type */
-    font-size: 1rem;                     /* Font size */
-    color: #34495e;                      /* Grayish text color */
-    line-height: 1.6;                    /* Space between lines */
-    margin-bottom: 15px;                 /* Space below paragraph */
+/* ---------------- Root Variables ---------------- */
+:root{
+  --color-primary: #2563EB;
+  --color-accent:  #22C55E;
+  --neutral-900:   #1E293B;
+  --neutral-700:   #34495e;
+  --neutral-100:   #F8FAFC;
+  --neutral-200:   #E2E8F0;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+
+  --radius-md: 12px;
+  --shadow-soft: 0 6px 20px rgba(16,24,40,0.06);
+  --max-width: 1100px;
+  --hero-min-h: 150px;
+  --hero-max-h: 250px;
 }
 
-/* Style all div elements (containers) */
-div {
-    padding: 20px;             /* Inner spacing */
-    margin: 15px auto;         /* Outer spacing and center horizontally */
-    /*max-width: 900px;          /* Limit width for readability */
+/* ---------------- Reset + Base ---------------- */
+* { box-sizing: border-box; }
+html,body { height: 100%; }
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: var(--neutral-900);
+  background: var(--neutral-100);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Style all links */
-a {
-    font-family: 'Tahoma', sans-serif;  /* Font type */
-    font-size: 1rem;                     /* Font size */
-    color: #2980b9;                      /* Blue link color */
-    text-decoration: none;               /* Remove underline */
-}
+/* Links */
+a { color: var(--color-primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
 
-/* Hover effect for all links */
-a:hover {
-    color: #e74c3c;                      /* Red on hover */
-}
-
-/* ---------------- Advanced selectors ---------------- */
-
-/* ID selectors for specific sections */
-#about {
-    background: linear-gradient(145deg, #ffffff, #dcdcdc);
-    border-radius: 10px;
-    box-shadow: 5px 5px 15px #b8b8b8, -5px -5px 15px #ffffff;
-}
-
-#services {
-    background-color: #fdf6e3;           /* Light beige background */
-    border-left: 5px solid #27ae60;      /* Green left border */
-}
-
-#join {
-    background-color: #f0f3f5;           /* Light blue-gray background */
-    border-left: 5px solid #f39c12;      /* Orange left border */
-    text-align: center;                  /* Center text in join section */
-}
-
-/* Class selector for call-to-action button */
-.join-button {
-    display: inline-block;               /* Treat like a button */
-    padding: 10px 25px;                  /* Button padding */
-    background-color: #2980b9;           /* Blue background */
-    color: white;                         /* White text */
-    font-weight: bold;                     /* Bold text */
-    border-radius: 5px;                    /* Rounded corners */
-    margin-top: 10px;                      /* Space above button */
-}
-
-/* Hover effect for join button */
-.join-button:hover {
-    background-color: #3498db;           /* Lighter blue on hover */
-}
-
-/* Descendant selector for small text inside footer */
-footer p small {
-    display: block;                      /* Force new line */
-    font-size: 0.8rem;                   /* Smaller font */
-    color: #7f8c8d;                      /* Gray color */
-    text-align: center;                   /* Center text */
-}
-
-/* Group selector for header text */
-header h1, header p {
-    text-align: center;                   /* Center all header text */
-    margin: 0;                            /* Remove default margin */
-}
-
-/* Attribute selector for images with alt attribute */
-img[alt] {
-    display: block;                        /* Block for centering */
-    margin: 20px auto;                     /* Center image */
-    border-radius: 10px;                   /* Rounded corners */
-}
-
-/* ---------------- Navigation Bar ---------------- */
-
-/* Style the navigation container */
-nav {
-    text-align: center;                    /* Center nav links */
-    margin: 20px 0;                        /* Space above and below nav */
-}
-
-/* Style nav links as clickable boxes */
-nav a {
-    display: inline-block;                 /* Treat like buttons */
-    padding: 10px 20px;                    /* Button padding */
-    margin: 5px;                           /* Space between links */
-    background-color: #2980b9;             /* Blue background */
-    color: white;                           /* White text */
-    text-decoration: none;                 /* Remove underline */
-    border-radius: 5px;                     /* Rounded corners */
-    font-weight: bold;                      /* Bold text */
-    transition: background-color 0.3s;     /* Smooth hover effect */
-}
-
-/* Hover effect for nav links */
-nav a:hover {
-    background-color: #3498db;            /* Lighter blue on hover */
-}
-
-/* ---------------- Footer ---------------- */
-
-/* Center all footer paragraphs */
-footer p {
-    text-align: center;                    /* Center text */
-    margin: 5px 0;                         /* Space above/below paragraphs */
-}
-
-/* Smaller, centered text for footer small element */
-footer p small {
-    display: block;
-    text-align: center;
-    font-size: 0.8rem;
-    color: #7f8c8d;
-}
-
-/* ---------------- Hero Section (Responsive, Smaller Banner) ---------------- */
-.hero {
-  width: 100%;                        /* full width */
-  height: 70px;                       /* smaller default height */
-  max-height: 250px;                   /* maximum height on large screens */
-  min-height: 150px;                   /* minimum height on small screens */
-
-  background-image: url('hunting2.jpg');
-  background-size: cover;              /* cover container */
-  background-position: center;         /* center the image */
-  background-repeat: no-repeat;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;             /* vertical centering of text */
-  align-items: center;                 /* horizontal centering */
-
-  text-align: center;
-  color: white;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
-
-  animation: zoomEffect 20s ease-in-out infinite alternate;
-  padding: 0 20px;                     /* horizontal padding for small screens */
-}
-
-/* Zoom animation */
-@keyframes zoomEffect {
-  0% { transform: scale(1); }
-  100% { transform: scale(1.03); }      /* subtle zoom for small height */
-}
-
-/* Responsive text */
-.hero h1 {
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
-   color: white;
-}
-
-.hero p {
-  font-size: 1rem;
-   color: white;
-  text-align: center;
-  overflow: hidden; /* hides text during movement */
-}
-
-/* Optional: smaller screens */
-@media (max-width: 600px) {
-  .hero {
-    height: 150px;                      /* reduce banner height on mobile */
-  }
-
-  .hero h1 {
-    font-size: 1.4rem;
-     color: white;
-  }
-
-  .hero p {
-    font-size: 0.9rem;
-   color: white;
-  }
-}
-
-/* ---------------- Images ---------------- */
-img[alt] {
-    display: block;
-    margin: 20px auto;
-    border-radius: 10px;
-   
-/* ----------------------------------- */
-}
-/* ----------------Container for consistent width ---------------- */
+/* Container */
 .container {
-  max-width: 1200px;   /* limit the width on big screens */
-  margin: 0 auto;      /* centers the container horizontally */
-  padding: 0 20px;     /* small padding on sides for phones */
-}
-@media (min-width: 1600px) {
-  .container {
-    max-width: 1300px;
-  }
-}
-.section-hero { background-color: #f0f3f5; }
-.section-vision { background-color: #ecf0f1; }
-.section-mission { background-color: #fdf6e3; }
-.section-how-it-works { background-color: #f0f3f5; }
-.section-features { background-color: #ecf0f1; }
-.section-team { background-color: #fdf6e3; }
-.section-cta { background-color: #f0f3f5; }
-/* Alternate section layout */
-.section-alt {
-  padding: 60px 0;
-}
-.flex-alt {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  flex-wrap: wrap;
-}
-.section-alt.reverse .flex-alt {
-  flex-direction: row-reverse;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-4);
 }
 
-.text-block {
-  flex: 1 1 450px;
+/* ---------------- Header / Nav / CTA ---------------- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-3) 0;
 }
-.image-block {
-  flex: 1 1 450px;
+header h1, header p { text-align: center; margin: 0; }
+
+nav {
+  text-align: center;
+  margin: 20px 0;
 }
-.image-block img {
-  width: 100%;
+nav a {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 5px;
+  background-color: var(--color-primary);
+  color: white;
+  border-radius: 5px;
+  font-weight: 700;
+  transition: background-color 0.3s;
+}
+nav a:hover { background-color: #3498db; }
+
+.cta {
+  background: var(--color-primary);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  box-shadow: 0 6px 18px rgba(37,99,235,0.15);
+  transition: transform .18s ease;
+}
+.cta:hover { transform: translateY(-2px); }
+
+/* ---------------- Cards / Utilities ---------------- */
+.card {
+  background: #fff;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-soft);
+  padding: var(--space-4);
 }
-
-/* How it works steps grid */
-.steps-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  margin-top: 30px;
-}
-
-/* Team grid (staggered cards) */
-.team-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  margin-top: 20px;
-}
-.member {
-  flex: 1 1 250px;
-  text-align: center;
-  padding: 15px;
-}
-
-/* Section spacing */
-.section-intro, .section-vision, .section-mission, .section-how-it-works,
-.section-features, .section-team, .section-cta {
-  padding: 60px 20px;
-}
-
-/* Cards */
 .card-3d {
   background: #fff;
   border-radius: var(--radius-md);
@@ -298,33 +109,364 @@ img[alt] {
   box-shadow: 0 12px 24px rgba(0,0,0,0.12);
 }
 
-/* CTA */
-.section-cta {
+/* ---------------- Typography ---------------- */
+h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
   text-align: center;
-  background: #2563EB;
-  color: white;
+  margin-bottom: 10px;
 }
-.section-cta .card-3d {
-  background: #3498db;
+p {
+  font-size: 1rem;
+  color: var(--neutral-700);
+  line-height: 1.6;
+  margin-bottom: 15px;
 }
+
+/* Generic div container */
+div {
+  padding: 20px;
+  margin: 15px auto;
+  /* max-width: 900px; */
+}
+
+/* Images */
+img[alt] {
+  display: block;
+  margin: 20px auto;
+  border-radius: 10px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ---------------- Sections (IDs) ---------------- */
+#about {
+    background: linear-gradient(145deg, #ffffff, #dcdcdc);
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px #b8b8b8, -5px -5px 15px #ffffff;
+    text-align: center;        /* centers all text */
+    
+}
+#services {
+    background: linear-gradient(145deg, #ffffff, #dcdcdc);
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px #b8b8b8, -5px -5px 15px #ffffff;
+    text-align: center; 
+}
+#join {
+    background: linear-gradient(145deg, #ffffff, #dcdcdc);
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px #b8b8b8, -5px -5px 15px #ffffff;
+    text-align: center; 
+}
+
+/* Section utility classes */
+.section-hero { background-color: #f0f3f5; }
+.section-vision { background-color: #ecf0f1; }
+.section-mission { background-color: #fdf6e3; }
+.section-how-it-works { background-color: #f0f3f5; }
+.section-features { background-color: #ecf0f1; }
+.section-team { background-color: #fdf6e3; }
+.section-cta { background-color: #f0f3f5; }
+
+/* Alternate layout */
+.section-alt { padding: 60px 0; }
+.flex-alt {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.section-alt.reverse .flex-alt { flex-direction: row-reverse; }
+.text-block { flex: 1 1 450px; }
+.image-block { flex: 1 1 450px; }
+.image-block img { width: 100%; border-radius: var(--radius-md); box-shadow: var(--shadow-soft); }
+
+/* Grids */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+.team-grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 20px; }
+.member { flex: 1 1 250px; text-align: center; padding: 15px; }
+
+/* Section spacing */
+.section-intro, .section-vision, .section-mission, .section-how-it-works,
+.section-features, .section-team, .section-cta { padding: 60px 20px; }
+
+/* CTA specific */
+.section-cta { text-align: center; background: var(--color-primary); color: white; }
+.section-cta .card-3d { background: #3498db; }
 .section-cta .join-button {
   background: white;
-  color: #2563EB;
+  color: var(--color-primary);
   font-weight: bold;
   padding: 12px 28px;
   margin-top: 15px;
   border-radius: 8px;
 }
-.section-cta .join-button:hover {
-  background: #eaf4ff;
+.section-cta .join-button:hover { background: #eaf4ff; }
+
+/* Buttons */
+.join-button {
+  display: inline-block;
+  padding: 10px 25px;
+  background-color: #2980b9;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+.join-button:hover { background-color: #3498db; }
+
+/* Footer */
+footer p { text-align: center; margin: 5px 0; }
+footer p small { display: block; text-align: center; font-size: 0.8rem; color: #7f8c8d; }
+
+/* ---------------- Hero Section (Responsive) ---------------- */
+.hero {
+  width: 100%;
+  height: 70px;                    /* default small banner */
+  min-height: var(--hero-min-h);
+  max-height: var(--hero-max-h);
+  background-image: url('hunting2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+  animation: zoomEffect 20s ease-in-out infinite alternate;
+  padding: 0 20px;
+}
+@keyframes zoomEffect { 0% { transform: scale(1); } 100% { transform: scale(1.03); } }
+.hero h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: white; }
+.hero p { font-size: 1rem; color: white; text-align: center; overflow: hidden; }
+
+/* ---------------- Rain / Word Animations ---------------- */
+/* Parent for the rain words */
+.rain-text {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  overflow: hidden;
+  line-height: 1.1;
 }
 
-/* Responsive tweaks */
-@media(max-width: 900px){
-  .flex-alt, .section-alt.reverse .flex-alt {
-    flex-direction: column !important;
-  }
-  .text-block, .image-block {
-    flex: 1 1 100%;
+/* Reset for every word span inside .rain-text */
+.rain-text span {
+  display: inline-block;
+  opacity: 0;
+  white-space: nowrap;
+}
+
+/* Left-to-right rain (apply to words NOT .right-text) */
+.rain-text span:not(.right-text) {
+  transform: translateX(-120%);
+  animation: rainSlide 3s ease-out infinite alternate;
+  /* You can change duration here */
+}
+
+/* Stagger left words */
+.rain-text span:nth-child(1):not(.right-text) { animation-delay: 0.2s; }
+.rain-text span:nth-child(2):not(.right-text) { animation-delay: 0.6s; }
+.rain-text span:nth-child(3):not(.right-text) { animation-delay: 1s; }
+.rain-text span:nth-child(4):not(.right-text) { animation-delay: 1.4s; }
+
+/* Right-side words: their own initial state + staggered delays */
+.right-text {
+  transform: translateX(120%);
+  opacity: 0;
+  display: inline-block;
+  animation: rainSlide 3s ease-out infinite alternate;
+}
+
+/* stagger for multiple right-text spans (uses nth-of-type relative to the parent p element) */
+.rain-text > .right-text:nth-of-type(5) { animation-delay: 2s; }
+.rain-text > .right-text:nth-of-type(6) { animation-delay: 2.4s; }
+.rain-text > .right-text:nth-of-type(7) { animation-delay: 2.8s; }
+.rain-text > .right-text:nth-of-type(8) { animation-delay: 3.2s; }
+
+/* Keyframes */
+@keyframes rainSlide {
+  from { transform: translateX(-120%); opacity: 0; }
+  to   { transform: translateX(0); opacity: 1; }
+}
+@keyframes slideInRight {
+  from { transform: translateX(120%); opacity: 0; }
+  to   { transform: translateX(0); opacity: 1; }
+}
+
+/* ---------------- Responsive tweaks ---------------- */
+@media (max-width: 900px) {
+  .flex-alt, .section-alt.reverse .flex-alt { flex-direction: column !important; }
+  .text-block, .image-block { flex: 1 1 100%; }
+  .rain-text { font-size: 1.25rem; }
+  .hero { height: 150px; min-height: 150px; }
+  .hero h1 { font-size: 1.4rem; }
+  .hero p { font-size: 0.95rem; }
+}
+
+@media (min-width: 1600px) {
+  .container { max-width: 1300px; }
+}
+
+/* ---------------- Utility helpers ---------------- */
+.hidden { display: none !important; }
+.center { display: flex; justify-content: center; align-items: center; }
+
+/* ==========================================================
+   CLICK-BOX (MAKE ANY DIV FULLY CLICKABLE)
+ */
+.click-box {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+.click-box:hover {
+  text-decoration: none;   /* prevents underline on hover */
+}
+/* ================= CONTACT SECTION (Merged Style) ================= */
+
+/*#contact {
+  /*background: #ffffff;
+  /*padding: 5px; */
+  /*border-radius: 10px;
+  border: 3px solid #3498db;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Subtitle */
+.contact-subtitle {
+  text-align: center;
+  color: #34495e;
+  margin-bottom: 25px;
+  font-size: 1.1rem;
+}
+
+/* Main container for spacing */
+/*.contact-container {
+  margin-top: 25px;
+  background: #fff;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  padding: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+/* ========== TOP ROW: MAP + INFO ========== */
+.contact-top {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+/* Left half: Map */
+.contact-map {
+  flex: 1;
+  min-width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 3px solid #3498db;
+}
+
+.contact-map iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Right half: Stacked info block */
+.contact-info-block {
+  flex: 1;
+  min-width: 300px;
+  /*background: white;*/
+  padding: 15px;
+  border-radius: 10px;
+  border: 3px solid #3498db;
+}
+
+.contact-info-block .info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+
+.contact-info-block .icon {
+  margin-right: 8px;
+  font-size: 1.1rem;
+}
+
+/* ========== FORM SECTION ========== */
+.contact-form {
+  /*background: #ffffff;
+  /*padding: 30px;*/
+  width: 98%;
+  border-radius: 10px;
+  border: 3px solid #3498db;
+  /*box-shadow: 0 4px 10px rgba(0,0,0,0.06);*/
+}
+.contact-form label {
+  font-weight: bold;
+  margin-top: 15px;
+  display: block;
+  color: #2c3e50;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 98%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #bdc3c7;
+  font-size: 1rem;
+  font-family: 'Verdana', sans-serif;
+  background-color: #ffffff;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+/* Button */
+.contact-form .join-button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  background-color: #2980b9;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  display: block;        /* NEW */
+  margin-left: auto;     /* NEW */
+  margin-right: auto;
+}
+
+.contact-form .join-button:hover {
+  background-color: #3498db;
+}
+
+/* Responsive: stack map and info */
+@media (max-width: 800px) {
+  .contact-top {
+    flex-direction: column;
   }
 }
+
+/* ---------------- End of file ---------------- */
