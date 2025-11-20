@@ -61,7 +61,16 @@ header {
   align-items: center;
   padding: var(--space-3) 0;
 }
-header h1, header p { text-align: center; margin: 0; }
+header h1 {text-align: center; margin: 0;
+            text-shadow: 0 3px 8px rgba(0,0,0,0.7); /* stronger shadow */
+            font-size: 12rem;
+            font-weight: 800;
+}
+header p { text-align: center; margin: 0;
+            text-shadow: 0 3px 8px rgba(0,0,0,0.7);
+            font-size: 2rem;
+            font-weight: 300;
+          }
 
 nav {
   text-align: center;
