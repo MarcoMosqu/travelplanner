@@ -98,16 +98,26 @@ nav a:hover { background-color: #3498db; }
   padding: var(--space-4);
 }
 .card-3d {
-  background: #fff;
+  
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-soft);
   padding: 30px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  /* Smooth lift only */
+  transition: transform 0.3s ease;
 }
+
 .card-3d:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+
+  /* Instant blue shine */
+  
+  box-shadow:
+    0 0 28px rgba(59, 130, 246, 0.6), /* strong blue glow */
+    0 12px 24px rgba(0,0,0,0.18);     /* depth shadow */
 }
+
+
 
 /* ---------------- Typography ---------------- */
 h1 {
@@ -148,10 +158,11 @@ img[alt] {
     
 }
 #services {
+
+    /* remove gradient and old shadows */
     background: linear-gradient(145deg, #ffffff, #dcdcdc);
     border-radius: 10px;
-    box-shadow: 5px 5px 15px #b8b8b8, -5px -5px 15px #ffffff;
-    text-align: center; 
+    text-align: center;
 }
 #join {
     background: linear-gradient(145deg, #ffffff, #dcdcdc);
@@ -470,3 +481,4 @@ footer p small { display: block; text-align: center; font-size: 0.8rem; color: #
 }
 
 /* ---------------- End of file ---------------- */
+
